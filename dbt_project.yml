@@ -1,0 +1,55 @@
+name: airbyte_utils
+version: '1.0'
+config-version: 2
+profile: normalize
+model-paths:
+- models
+docs-paths:
+- docs
+analysis-paths:
+- analysis
+test-paths:
+- tests
+seed-paths:
+- data
+macro-paths:
+- macros
+target-path: ../build
+log-path: ../logs
+packages-install-path: /dbt
+clean-targets:
+- build
+- dbt_modules
+quoting:
+  database: true
+  schema: false
+  identifier: true
+models:
+  airbyte_utils:
+    +materialized: table
+    generated:
+      airbyte_ctes:
+        +tags: airbyte_internal_cte
+        +materialized: ephemeral
+      airbyte_incremental:
+        +tags: incremental_tables
+        +materialized: table
+      airbyte_tables:
+        +tags: normalized_tables
+        +materialized: table
+      airbyte_views:
+        +tags: airbyte_internal_views
+        +materialized: view
+vars:
+  dbt_utils_dispatch_list:
+  - airbyte_utils
+  json_column: _airbyte_data
+  models_to_source:
+    eusponsored_products_report_stream_ab1: main._airbyte_raw_eusponso__roducts_report_stream
+    eusponsored_products_report_stream_ab2: main._airbyte_raw_eusponso__roducts_report_stream
+    eusponsored_products_report_stream_ab3: main._airbyte_raw_eusponso__roducts_report_stream
+    eusponsored_products_report_stream: main._airbyte_raw_eusponso__roducts_report_stream
+    eusponsored_products__2ort_stream_metric_ab1: main._airbyte_raw_eusponso__roducts_report_stream
+    eusponsored_products__2ort_stream_metric_ab2: main._airbyte_raw_eusponso__roducts_report_stream
+    eusponsored_products__2ort_stream_metric_ab3: main._airbyte_raw_eusponso__roducts_report_stream
+    eusponsored_products_report_stream_metric: main._airbyte_raw_eusponso__roducts_report_stream
