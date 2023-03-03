@@ -4,7 +4,7 @@
     tags = [ "top-level-intermediate" ]
 ) }}
 -- SQL model to cast each column to its adequate SQL type converted from the JSON schema type
--- depends_on: {{ ref('eusponsored_products_report_stream_ab1') }}
+-- depends_on: {{ ref('eu_sponsored_products_report_stream_ab1') }}
 select
     cast(metric as {{ type_json() }}) as metric,
     cast(profileid as {{ dbt_utils.type_bigint() }}) as profileid,
@@ -14,8 +14,8 @@ select
     _airbyte_ab_id,
     _airbyte_emitted_at,
     {{ current_timestamp() }} as _airbyte_normalized_at
-from {{ ref('eusponsored_products_report_stream_ab1') }}
--- eusponsored_products_report_stream
+from {{ ref('eu_sponsored_products_report_stream_ab1') }}
+-- eu_sponsored_products_report_stream
 where 1 = 1
 {{ incremental_clause('_airbyte_emitted_at', this) }}
 
