@@ -12,7 +12,7 @@ select
         'updatedat',
         'recordtype',
         'reportdate',
-    ]) }} as _airbyte_eu_sponsored____report_stream_hashid,
+    ]) }} as _airbyte_eu_sponsored___report_stream_hashid,
     tmp.*
 from {{ ref('eu_sponsored_products_report_stream_ab2') }} tmp
 -- eu_sponsored_products_report_stream

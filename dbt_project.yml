@@ -45,11 +45,8 @@ vars:
   - airbyte_utils
   json_column: _airbyte_data
   models_to_source:
-    eusponsored_products_report_stream_ab1: main._airbyte_raw_eusponso__roducts_report_stream
-    eusponsored_products_report_stream_ab2: main._airbyte_raw_eusponso__roducts_report_stream
-    eusponsored_products_report_stream_ab3: main._airbyte_raw_eusponso__roducts_report_stream
-    eusponsored_products_report_stream: main._airbyte_raw_eusponso__roducts_report_stream
-    eusponsored_products__2ort_stream_metric_ab1: main._airbyte_raw_eusponso__roducts_report_stream
-    eusponsored_products__2ort_stream_metric_ab2: main._airbyte_raw_eusponso__roducts_report_stream
-    eusponsored_products__2ort_stream_metric_ab3: main._airbyte_raw_eusponso__roducts_report_stream
-    eusponsored_products_report_stream_metric: main._airbyte_raw_eusponso__roducts_report_stream
+    eu_sponsored_products_report_stream_ab1: main._airbyte_raw_eu_spons__roducts_report_stream
+    eu_sponsored_products_report_stream_ab2: main._airbyte_raw_eu_spons__roducts_report_stream
+    eu_sponsored_products_report_stream_ab3: main._airbyte_raw_eu_spons__roducts_report_stream
+    eu_sponsored_products_report_stream: main._airbyte_raw_eu_spons__roducts_report_stream
+
